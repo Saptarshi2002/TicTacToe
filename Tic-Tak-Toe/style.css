@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgba(232, 231, 203, 0.863);
+}
+
+nav {
+    /* background-color: rgb(121, 31, 121); */
+    background-color: #0e6e2de6;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    height: 74px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.heading{
+    margin-top: 2px;
+   color: rgb(5, 51, 33);
+}
+
+.gameContainer {
+    /* background-color: greenyellow; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    margin-top: 40px;
+    margin-left: 200px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10vw);
+}
+
+.box {
+    font-size: 7vw;
+    cursor: pointer;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover {
+    background-color: rgba(108, 190, 241, 0.375);
+}
+
+.info {
+    font-size: 23px;
+}
+
+.gameInfo {
+    padding: 70px 45px;
+    margin: 10px;
+}
+
+.imgbox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.br-0 {
+    border-right: 0;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+}
+
+.bb-0 {
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 0 25px;
+    padding: 3px 15px;
+    background-color: rgb(221, 210, 231);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* .line{
+    background-color: black;
+    width: 3px;
+    height: 20vw;
+} */
+/* .line{
+    height: 3px;
+    width: 0;
+    position: absolute;
+    background-color: #911d91;
+    transition: width 1s ease-in-out;
+} */
+
+.primary-btn {
+    height: 30px;
+    width: 70px;
+    margin: 10px;
+}
+
+.wingif {
+    right: 30px;
+    position: relative;
+}
+
+.draw-msg,
+.winner-msg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(173, 173, 173, 0.938);
+}
+
+.draw-msg,
+.winner-msg {
+    display: none;
+}
+
+.draw-msg.show,
+.winner-msg.show {
+    display: flex;
+}
+
+
+
+@media screen and (max-width:800px) {
+    .gameContainer {
+        flex-wrap: wrap;
+        margin: 100px;
+    }
+
+    .gameInfo {
+        margin-top: 35px;
+    }
+
+    .gameInfo h1 {
+        font-size: 1.3rem;
+    }
+
+    .container {
+        grid-template-columns: repeat(3, 15vw);
+        grid-template-rows: repeat(3, 18w);
+    }
+}
