@@ -6,6 +6,7 @@ let isgameover = false;
 let body = document.getElementsByTagName('body');
 //Function to change turn 
 const changeTurn = () => {
+
     return turn === "X" ? "0" : "X";
 }
 
@@ -44,6 +45,15 @@ Array.from(boxes).forEach(element => {
     let boxtext = element.querySelector(".boxtext");
     element.addEventListener('click', () => {
         if (boxtext.innerText === '') {
+            if(turn == 'X')
+            {
+                boxtext.classList.remove('playerO');
+                boxtext.classList.add('playerX');
+            }
+            else{
+                boxtext.classList.remove('playerX');
+                boxtext.classList.add('playerO');
+            }
             boxtext.innerText = turn;
             c++;
             turn = changeTurn();

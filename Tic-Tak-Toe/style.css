@@ -2,14 +2,15 @@
     margin: 0;
     padding: 0;
 }
-body{
-    background-color: rgba(232, 231, 203, 0.863);
+
+body {
+    background-color: rgb(10, 10, 10);
 }
 
 nav {
     /* background-color: rgb(121, 31, 121); */
-    background-color: #0e6e2de6;
-    color: white;
+    background-color: white;
+    color: rgb(9, 9, 9);
 }
 
 nav ul {
@@ -22,9 +23,16 @@ nav ul {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.heading{
+.heading {
     margin-top: 2px;
-   color: rgb(5, 51, 33);
+    color: #ee5082;
+    border: 4px dotted white;
+    width: 450px;
+}
+
+h1 {
+    padding: 10px;
+    text-align: center;
 }
 
 .gameContainer {
@@ -45,17 +53,22 @@ nav ul {
 .box {
     font-size: 7vw;
     cursor: pointer;
-    border: 2px solid black;
+    border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .box:hover {
-    background-color: rgba(108, 190, 241, 0.375);
+    background-color: rgba(212, 238, 184, 0.118);
+}
+
+.boxtext {
+    color: green;
 }
 
 .info {
+    color: aquamarine;
     font-size: 23px;
 }
 
@@ -87,12 +100,21 @@ nav ul {
 
 #reset {
     margin: 0 25px;
-    padding: 3px 15px;
-    background-color: rgb(221, 210, 231);
-    border-radius: 6px;
+    padding: 5px 15px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 12px;
     font-weight: bold;
+    background-color: #f9004d;
+    color: white;
+}
+
+.playerX{
+    color: #53e4a5;
+}
+
+.playerO{
+    color: #7797cf;
 }
 
 /* .line{
