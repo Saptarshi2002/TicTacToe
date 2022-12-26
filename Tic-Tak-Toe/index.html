@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="icon" type="image/x-icon" href="https://image.pngaaa.com/42/1418042-small.png">
+    <script src="https://kit.fontawesome.com/ee27ae787a.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,6 +16,16 @@
     <nav>
         <ul>
             <li>TicTacToe.com</li>
+            <div>
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                  <i class="fa-sharp fa-solid fa-moon inverted"></i>
+                    <i class='fa-sharp fa-solid fa-sun inverted'></i>
+                    <div class='ball'>
+                </label>
+            </div>
+
+            </div>
         </ul>
     </nav>
     <marquee behavior="" direction="">
@@ -36,7 +48,9 @@
         <div class="gameInfo">
 
             <div>
-                <span class="info">&nbsp; Turn for X <br><br></span>
+                <br><br>
+                <span class="info">&nbsp; Turn for X </span><br><br>
+                <img class="inverted" id="cheer" src="./0012.gif" alt="Image Processing"><br><br>
                 <button id="reset" onclick="reset()">Reset</button>
             </div>
         </div>
@@ -45,23 +59,42 @@
 
     <!-- Draw Window -->
     <div class="draw-msg">
-        <div class="draw">
+        <div class="draw inverted">
             <h1>Draw 😑</h1>
         </div>
-        <button onclick="reset()" id="drawBtn" class="primary-btn">Play Again</button>
+        <button onclick="reset()" id="drawBtn" class="primary-btn  inverted">Play Again</button>
     </div>
 
     <!-- winner Window -->
     <div class="winner-msg">
         <h1>Winner</h1>
-        <img class="wingif" height="200px" src="./excited.gif" alt="">
+        <img class="wingif inverted" height="200" src="./excited.gif" alt="">
         <br>
-        <div class="winner"><h2>Player with X Won</h2></div>
-        <button id="restartBtn" class="primary-btn" onclick="reset()"> Restart</button>
-        
+        <div class="winner">
+            <h2>Player with X Won</h2>
+        </div>
+        <button id="restartBtn" class="primary-btn inverted" onclick="reset()"> Restart</button>
+
     </div>
 
+    <script>
+        function darkMode() {
+            document.documentElement.classList.toggle('dark-mode');
+            document.querySelectorAll('.inverted').forEach((result) => {
+                result.classList.toggle('invert');
+            })
+        }
+    </script>
+    <script>
+        const checkbox = document.getElementById('checkbox');
 
+        checkbox.addEventListener('change', () => {
+            document.documentElement.classList.toggle('dark-mode');
+            document.querySelectorAll('.inverted').forEach((result) => {
+                result.classList.toggle('invert');
+            })
+        })
+    </script>
     <script src="script.js"></script>
 </body>
 

@@ -1,16 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
 }
 
-body {
-    background-color: rgb(10, 10, 10);
+.dark-mode {
+    filter: invert(1) hue-rotate(180deg)
 }
+
+.invert {
+    filter: invert(1) hue-rotate(180deg)
+}
+
+/* body {
+    background-color: rgb(10, 10, 10);
+} */
+body {
+    background-color: white;
+}
+
 
 nav {
     /* background-color: rgb(121, 31, 121); */
-    background-color: white;
-    color: rgb(9, 9, 9);
+    background-color: black;
+    color: white;
 }
 
 nav ul {
@@ -23,12 +39,60 @@ nav ul {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* Toggle button */
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    width: 50px;
+    height: 26px;
+    background-color: whitesmoke;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+    margin: 900px;
+    font-size: 18px;
+}
+
+.ball {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(33, 31, 31);
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+}
+
+
+.fa-moon {
+    color: rgb(246, 244, 246);
+}
+
+.fa-sun {
+    color: rgba(255, 166, 0, 0.916);
+}
+
+
 .heading {
-    margin-top: 2px;
-    color: #ee5082;
-    border: 4px dotted white;
+    margin-top: 5px;
+    color: #eb366f;
+    border: 4px dotted black;
     width: 450px;
 }
+
 
 h1 {
     padding: 10px;
@@ -36,10 +100,9 @@ h1 {
 }
 
 .gameContainer {
-    /* background-color: greenyellow; */
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
+    align-content: center;
     margin-top: 40px;
     margin-left: 200px;
 }
@@ -48,39 +111,41 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 10vw);
     grid-template-rows: repeat(3, 10vw);
+    margin-right: 50px;
 }
+
+
 
 .box {
     font-size: 7vw;
     cursor: pointer;
-    border: 2px solid white;
+    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .box:hover {
-    background-color: rgba(212, 238, 184, 0.118);
+    background-color: rgba(124, 143, 103, 0.321);
 }
 
 .boxtext {
+    font-family: 'Varela Round', sans-serif;
     color: green;
 }
 
 .info {
-    color: aquamarine;
-    font-size: 23px;
+    color: #0d9f28;
+    font-size: 25px;
+    margin-bottom: 10px;
+    position: relative;
+    left: 15px;
 }
 
-.gameInfo {
-    padding: 70px 45px;
-    margin: 10px;
-}
+/* .gameInfo {
+    margin: 60px;
+} */
 
-.imgbox img {
-    width: 0;
-    transition: width 1s ease-in-out;
-}
 
 .br-0 {
     border-right: 0;
@@ -100,21 +165,27 @@ h1 {
 
 #reset {
     margin: 0 25px;
-    padding: 5px 15px;
+    padding: 7px 17px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     background-color: #f9004d;
     color: white;
+    position: relative;
+    left: 15px;
 }
 
-.playerX{
-    color: #53e4a5;
+/* #cheer{
+    border: none;
+} */
+
+.playerX {
+    color: #0d9f28;
 }
 
-.playerO{
-    color: #7797cf;
+.playerO {
+    color: #3f75d2;
 }
 
 /* .line{
@@ -167,14 +238,14 @@ h1 {
 
 
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:850px) {
     .gameContainer {
         flex-wrap: wrap;
-        margin: 100px;
+        margin: 15px 80px 8px;
     }
-
-    .gameInfo {
-        margin-top: 35px;
+ 
+    .heading {
+        font-size: 25px;
     }
 
     .gameInfo h1 {
