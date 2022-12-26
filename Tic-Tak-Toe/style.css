@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .dark-mode {
@@ -15,16 +15,12 @@
     filter: invert(1) hue-rotate(180deg)
 }
 
-/* body {
-    background-color: rgb(10, 10, 10);
-} */
 body {
     background-color: white;
 }
 
 
 nav {
-    /* background-color: rgb(121, 31, 121); */
     background-color: black;
     color: white;
 }
@@ -142,10 +138,6 @@ h1 {
     left: 15px;
 }
 
-/* .gameInfo {
-    margin: 60px;
-} */
-
 
 .br-0 {
     border-right: 0;
@@ -176,9 +168,6 @@ h1 {
     left: 15px;
 }
 
-/* #cheer{
-    border: none;
-} */
 
 .playerX {
     color: #0d9f28;
@@ -188,18 +177,6 @@ h1 {
     color: #3f75d2;
 }
 
-/* .line{
-    background-color: black;
-    width: 3px;
-    height: 20vw;
-} */
-/* .line{
-    height: 3px;
-    width: 0;
-    position: absolute;
-    background-color: #911d91;
-    transition: width 1s ease-in-out;
-} */
 
 .primary-btn {
     height: 30px;
