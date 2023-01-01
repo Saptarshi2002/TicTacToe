@@ -1,5 +1,9 @@
 var drawMsg = document.getElementsByClassName('draw-msg');
 var winMsg = document.getElementsByClassName('winner-msg');
+const music = new Audio('music.mp3');
+const turnMusic = new Audio('move.mp3');
+const winMusic = new Audio('cheering.mp3');
+const drawSound = new Audio('draw.mp3');
 let c = 0;
 let turn = "X"
 let isgameover = false;
@@ -10,9 +14,13 @@ let cheer = document.getElementById('cheer');
 const changeTurn = () => {
     if (turn == 'X') {
         cheer.src = '0018.gif';
+        turnMusic.play();
+
     }
     else {
         cheer.src = '0012.gif';
+        turnMusic.play();
+
     }
     playerDisplay.classList.remove(`player${turn}`);
     turn = turn === 'X' ? 'O' : 'X';
@@ -42,10 +50,12 @@ const checkWin = () => {
             isgameover = true;
 
             for (var i = 0; i < winMsg.length; i++) {
+                winMusic.play();
+                music.pause();
+
                 winMsg[i].classList.add('show');
             }
             document.querySelector('.winner').innerText = "Player with " + boxtexts[e[0]].innerText + " Won";
-            // var x = document.createElement("https://media.tenor.com/-Yf9G_sGZ-8AAAAM/youre-a-winner-winner.gif"); 
         }
     })
 }
@@ -55,6 +65,8 @@ let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element => {
     let boxtext = element.querySelector(".boxtext");
     element.addEventListener('click', () => {
+        music.play();
+
         if (boxtext.innerText === '') {
             if (turn == 'X') {
                 boxtext.classList.remove('playerO');
@@ -69,6 +81,9 @@ Array.from(boxes).forEach(element => {
             turn = changeTurn();
             if (c == 9) {
                 for (var i = 0; i < drawMsg.length; i++) {
+                    drawSound.play();
+                    music.pause();
+
                     drawMsg[i].classList.add('show');
                 }
             }
@@ -96,6 +111,7 @@ function reset() {
         drawMsg[i].classList.remove('show');
     }
     c = 0;
+    winMusic.pause();
     cheer.src = '0012.gif';
     playerDisplay.classList.remove('playerX');
     playerDisplay.classList.remove('playerO');
